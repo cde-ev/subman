@@ -1,3 +1,5 @@
+"""Basic testing for the subman library"""
+
 import enum
 import itertools
 import unittest

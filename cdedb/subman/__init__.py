@@ -1,3 +1,5 @@
+"""Subman – Powerful Python package to manage subscriptions"""
+
 from .exceptions import SubscriptionError, SubscriptionInfo
 from .machine import SubscriptionAction, SubscriptionState, SubscriptionPolicy
 from .subman import SubscriptionManager
