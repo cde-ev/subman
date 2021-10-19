@@ -4,7 +4,7 @@ import enum
 import itertools
 import unittest
 
-from cdedb.subman import SubscriptionState, SubscriptionManager
+from cdedb.subman import SubscriptionManager, SubscriptionState
 
 
 class SubmanTest(unittest.TestCase):
