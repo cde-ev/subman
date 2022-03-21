@@ -24,7 +24,7 @@ for them.
 import enum
 from typing import Mapping, Optional, Set
 
-from .exceptions import SubscriptionError, SubscriptionInfo
+from subman.exceptions import SubscriptionError, SubscriptionInfo
 
 
 def n_(x: str) -> str:

@@ -20,8 +20,8 @@ functions:
 
 from typing import AbstractSet, Collection, Optional
 
-from .exceptions import SubscriptionError
-from .machine import (
+from subman.exceptions import SubscriptionError
+from subman.machine import (
     SUBSCRIPTION_ERROR_MATRIX, ActionStateErrorMatrix, SubscriptionAction,
     SubscriptionPolicy, SubscriptionState, n_,
 )
