@@ -91,7 +91,8 @@ class SubscriptionManager:
         of them may be appropriate to use from the current state.
         """
 
-        if exception := self._get_error(action, old_state):
+        exception = self._get_error(action, old_state)
+        if exception:
             raise exception
 
     @staticmethod
