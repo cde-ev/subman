@@ -123,8 +123,9 @@ If subman detects this has not been done, it will raise an error.
 Usage example
 -------------
 For a comprehensive example of the use of subman, we recommend taking a look at
-the ml realm of the CdEDBv2. There, subman is used to support complex mailinglist
-management by subscribers and moderators.
+the ml realm of the `CdEDBv2 <https://github.com/cde-ev/cdedb2>`_.
+There, subman is used to support complex mailinglist management by subscribers
+and moderators.
 The subscription state data is saved into a SQL database, except for
 ``SubscriptionState.none``, and includes a logging of each ``SubscriptionAction``.
 
@@ -135,6 +136,6 @@ a really streamlined version of the CdEDBv2 MlBackend.
 
 Internationalization
 --------------------
-Like the CdEDBv2, subman is internationalized using GNU gettext. By adding
-translations for the respective strings, users of the library can customize error
-messages to their heart's content.
+Like the `CdEDBv2 <https://github.com/cde-ev/cdedb2>`_, subman is internationalized
+using GNU gettext. By adding translations for the respective strings, users of the
+library can customize error messages to their heart's content.
