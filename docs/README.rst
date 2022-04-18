@@ -129,10 +129,11 @@ and moderators.
 The subscription state data is saved into a SQL database, except for
 ``SubscriptionState.none``, and includes a logging of each ``SubscriptionAction``.
 
-However, a minimal example class can be realized as follows. This is basically
-a really streamlined version of the CdEDBv2 MlBackend.
+.. |subman_example.py| image:: subman_example.py
 
-.. literalinclude:: subman_example.py
+However, a minimal example class can be realized as shown in |subman_example.py|.
+This is basically a really streamlined version of the
+`CdEDBv2 <https://github.com/cde-ev/cdedb2>`_ MlBackend.
 
 Internationalization
 --------------------
