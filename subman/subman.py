@@ -41,7 +41,7 @@ class SubscriptionManager:
 
     def __init__(
         self, *,
-        error_matrix: ActionStateErrorMatrix = None,
+        error_matrix: Optional[ActionStateErrorMatrix] = None,
         unwritten_states: Optional[StateColl] = None,
     ) -> None:
         """
