@@ -131,8 +131,6 @@ class SubscriptionManager:
         :param old_state: The current state of the relation between the affected user and
             the affected subscription object.
         :param allow_unsub: If this is not True, prevent the user from becoming unsubscribed.
-            We recommend only using the policies SubscriptionPolicy.implicits_only and
-            None for objects using this feature.
             Warning: This feature is not compatible with users with old_state in
             {SubscriptionState.unsubscribed, SubscriptionState.unsubscription_override}
             regarding the respective object.
@@ -185,8 +183,7 @@ class SubscriptionManager:
         if old_state.is_subscribed() and policy.is_none():
             # If user is not allowed as subscriber, remove them.
             return SubscriptionState.none
-        elif (old_state == SubscriptionState.implicit and not is_implied
-              and policy.is_implicit()):
+        elif old_state == SubscriptionState.implicit and not is_implied:
             # If user is implicit subscriber and not implied, remove them.
             # This conditional is only relevant if implicit subscribers are written.
             return SubscriptionState.none

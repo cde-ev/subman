@@ -4,7 +4,7 @@ import enum
 import itertools
 import unittest
 
-from subman import SubscriptionManager, SubscriptionState
+from subman import SubscriptionManager, SubscriptionPolicy, SubscriptionState
 
 
 class SubmanTest(unittest.TestCase):
@@ -52,6 +52,15 @@ class SubmanTest(unittest.TestCase):
                 self.assertEqual(subman.unwritten_states, set(unwritten))
                 self.assertEqual(subman.written_states,
                                  all_states.difference(unwritten))
+
+    def test_implicit_cleanup(self) -> None:
+        """Ensure implicits are marked as obsolet if they are no longer implied."""
+        subman = SubscriptionManager()
+        state = SubscriptionState.implicit
+        policies = {SubscriptionPolicy.none, SubscriptionPolicy.moderated_opt_in,
+                    SubscriptionPolicy.subscribable, SubscriptionPolicy.invitation_only}
+        for policy in policies:
+            self.assertTrue(subman.is_obsolete(policy, state, is_implied=False))
 
 
 if __name__ == "__main__":

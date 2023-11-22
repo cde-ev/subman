@@ -99,15 +99,8 @@ class SubscriptionPolicy(enum.IntEnum):
     moderated_opt_in = 2
     #: User may not subscribe by themselves, but can be administratively subscribed.
     invitation_only = 3
-    #: Only implicit subscribers are allowed. If the user is neither implicit subscriber
-    #: nor has subscription override, their subscription will be removed.
-    implicits_only = 4
     #: User is not allowed to be subscribed except by subscription override.
     none = 5
-
-    def is_implicit(self) -> bool:
-        """Whether or not the user is only allowed to be subscribed implicitly."""
-        return self == self.implicits_only
 
     def is_none(self) -> bool:
         """Whether or not the user is not allowed to be subscribed."""
